@@ -4,7 +4,7 @@ Protobuf feeds from New York MTA Catcher
 
 ### Install requirements 
 
-<code> pip install -r requirements.txt </code
+<code> pip install -r requirements.txt </code>
   
 ### Set API Key
   
