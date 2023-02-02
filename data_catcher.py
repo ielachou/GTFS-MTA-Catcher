@@ -16,7 +16,7 @@ for feed in feeds :
     if not os.path.exists(f"res/{term}"):
         os.makedirs(f'res/{term}')
 
-for i in range(8):
+while True:
     now = datetime.now()
 
     dt_string = now.strftime("%Y-%m-%d_%H-%M-%S")
