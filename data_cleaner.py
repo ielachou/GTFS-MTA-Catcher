@@ -45,9 +45,9 @@ for directory in dirs[:1] :
 
                 df = pd.concat([df,get_descriptor(curr_v.get("trip"))], axis = 1)
                 df = pd.concat([df,get_descriptor(curr_v.get("vehicle"))], axis = 1)
-		df = pd.concat([df,get_descriptor(curr_v.get("position"))], axis = 1)
-		print(df)
-		df["current_status"] = curr_v.get("currentStatus")
+                df = pd.concat([df,get_descriptor(curr_v.get("position"))], axis = 1)
+                print(df)
+                df["current_status"] = curr_v.get("currentStatus")
                 df["stop_id"] = curr_v.get("stopID")
                 df["timestamp"] = curr_v.get("timestamp")
                 df["congestion_level"] = curr_v.get("congestionLevel")
