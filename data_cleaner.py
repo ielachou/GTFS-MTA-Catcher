@@ -21,7 +21,7 @@ dirs = os.listdir("res")
 
 
 for directory in dirs[:1] : 
-    ls = os.listdir(f"res/{directory}")[:5]
+    ls = os.listdir("res/" + directory)[:5]
     full_df = pd.DataFrame()
     
     for file in ls:
