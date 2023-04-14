@@ -26,7 +26,7 @@ for directory in dirs[:1] :
     
     for file in ls:
         message = rt.FeedMessage()
-        f = open("res/" + directory + "/" + "file", 'rb')
+        f = open("res/" + directory + "/" + file, 'rb')
         
         j=0
         
@@ -45,17 +45,18 @@ for directory in dirs[:1] :
 
                 df = pd.concat([df,get_descriptor(curr_v.get("trip"))], axis = 1)
                 df = pd.concat([df,get_descriptor(curr_v.get("vehicle"))], axis = 1)
-                df = pd.concat([df,get_descriptor(curr_v.get("position"))], axis = 1)
-                df["current_status"] = curr_v.get("currentStatus")
+		df = pd.concat([df,get_descriptor(curr_v.get("position"))], axis = 1)
+		print(df)
+		df["current_status"] = curr_v.get("currentStatus")
                 df["stop_id"] = curr_v.get("stopID")
                 df["timestamp"] = curr_v.get("timestamp")
                 df["congestion_level"] = curr_v.get("congestionLevel")
                 df["occupancy_status"] = curr_v.get("occupancyStatus")
                 df["current_stop_sequence"] = curr_v.get("currentStopSequence")
                 
-                full_df = pd.concat([df, full_df])
+                full_df = pd.concat([df, full_df], sort=False)
             j+=1
 
     full_df = full_df.drop_duplicates()
 
-    full_df.to_csv(f"res/" + directory + ".csv", index= False)
+    full_df.to_csv("res/" + directory + ".csv", index= False)
